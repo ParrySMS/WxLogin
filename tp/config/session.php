@@ -9,26 +9,18 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-use think\facade\Route;
-
-Route::get('think', function () {
-    return 'hello,ThinkPHP5!';
-});
-
-Route::get('hello/:name', 'index/hello');
-
-
-//Route::get(':version/address/:id','api/:version.user/address');  //一般路由规则，
-
-//资源路由
-Route::resource('api/:version/:ctrl','api/:version.:ctrl');
-
-//Route::get(':version/user','api/:version.user');       //资源路由
-
-
-
+// +----------------------------------------------------------------------
+// | 会话设置
+// +----------------------------------------------------------------------
 
 return [
-
-
+    'id'             => '',
+    // SESSION_ID的提交变量,解决flash上传跨域
+    'var_session_id' => '',
+    // SESSION 前缀
+    'prefix'         => 'think',
+    // 驱动方式 支持redis memcache memcached
+    'type'           => '',
+    // 是否自动开启 SESSION
+    'auto_start'     => true,
 ];
