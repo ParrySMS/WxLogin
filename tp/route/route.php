@@ -10,11 +10,19 @@
 // +----------------------------------------------------------------------
 
 Route::get('think', function () {
-    return 'hello,ThinkPHP5!';
+    return 'hello,ThinkPHP5555555555!';
 });
 
 Route::get('hello/:name', 'index/hello');
 
-return [
 
+return [
+   // 添加路由规则
+
+//    定义路由规则后，如果开启强制路由转化，原来的URL地址将会失效，变成非法请求。
+
+    ''=>'index/index/index', //首页
+
+    'index/[:name]' => 'module1/ctrl_demo/index',
+    'hello2' => 'module1/ctrl_demo/hello',
 ];
