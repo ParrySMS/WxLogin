@@ -2,6 +2,7 @@
 namespace app\module1\controller;
 
 use think\Controller;
+use think\Db;
 
 class Ctrl extends Controller
 {
@@ -20,6 +21,15 @@ class Ctrl extends Controller
 
     }
 
+    public function dbCustomers()
+    {
+        $data = Db::name('db_customers')->find();
+        $this->assign('res',$data);
+
+        return $this->fetch('db');
+
+
+    }
     protected function profunc()
     {
         return 'protect';
